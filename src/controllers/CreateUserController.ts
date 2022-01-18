@@ -7,7 +7,10 @@ class CreateUserController {
         const email = request.body.email;
         
         return response.json({
-            mensagem: 'Criando usuario'
+            mensagem: {
+                name,
+                email
+            }
         });
     }
 }
