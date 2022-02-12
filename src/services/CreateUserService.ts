@@ -22,8 +22,16 @@ class CreateUserService {
                 }
             ])
             .execute();
-        
-        return user;
+
+        /*
+        const createdUser = getRepository(User)
+        .createQueryBuilder('users')
+        .select()
+        .where('id = :id', { id: id })
+        .getOne()
+        */
+
+        return user.identifiers[0];
     }
 }
 

@@ -13,14 +13,12 @@ class CreateUserController {
 
         if (name.length === 0 || email.length === 0) {
             return response.status(400).json({
-                mensagem: "Preencha todos os campos"
+                mensagem: "Nome e e-mail são obrigatórios"
             });
         }
         
         const user = await createUserService.execute({id, name, email});
-        return response.status(201).json({
-            mensagem: user
-        });
+        return response.status(201).json(user);
     }
 }
 
